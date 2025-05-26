@@ -635,4 +635,8 @@ const breaks = await Break.find({ user_id, date }).sort({ createdAt: -1 });
     resp.send(response);
 
   });
-app.listen(5000)
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
