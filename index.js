@@ -9,17 +9,17 @@ const Attendance = require("./db/attendance");
 const Break = require("./db/break");
 
 
-// const Counter = require('./db/counter');
+const Counter = require('./db/counter');
 
-// const initializeCounter = async () => {
-//     const existingCounter = await Counter.findOne({ name: 'employee_id' });
-//     if (!existingCounter) {
-//         const counter = new Counter({ name: 'employee_id', sequence_value: 0 });
-//         await counter.save();
-//     }
-// };
+const initializeCounter = async () => {
+    const existingCounter = await Counter?.findOne({ name: 'employee_id' });
+    if (!existingCounter) {
+        const counter = new Counter({ name: 'employee_id', sequence_value: 0 });
+        await counter.save();
+    }
+};
 
-// initializeCounter(); // Run the counter initialization once
+initializeCounter(); // Run the counter initialization once
 const otpStore = {}; // email -> otp
 
 const app = express();
